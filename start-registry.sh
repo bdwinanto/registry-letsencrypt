@@ -28,7 +28,7 @@ createuser() {
     read username
     echo -n "Password":
     read -s password
-    docker run --rm --entrypoint htpasswd registry:2 -Bbn ${username} ${password} > conf/auth/htpasswd
+    docker run --rm --entrypoint htpasswd registry:2.7.0 -Bbn ${username} ${password} > conf/auth/htpasswd
     log_lvl_info "Authentication configuration completed."
 }
 
